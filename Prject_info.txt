@@ -1,0 +1,28 @@
+Aim : To extract voter data from data.txt and create csv of excel file
+
+Findings:
+1) Data is written in hindi
+
+2) Methond1 : http://paulsolin.com/2014/06/27/scraping-pdfs-with-python/
+Convert pdf to html using pdf2txt
+Scrap data using beautiful soup
+Issue : Garbage data in html
+
+2) Copy a word and pasting it gives totally different word
+3) http://stackoverflow.com/questions/30756193/unable-to-copy-exact-hindi-content-from-pdf : Some error in toUnicode map
+
+4) http://www.glyphandcog.com/textext.html : pdf background
+Issue : Font is encodded subset, hence it is difficult to convert to text
+
+5) Methond2: OCR pdf using pypdfocr, go to method 1
+Issue: OCR did not recognize hindi font, gave it as it was.
+
+6) Method3: Extract Unicode map from pdf, correct it and extract the data.
+http://stackoverflow.com/questions/13668105/extact-tounicode-map-from-one-pdf-and-use-in-another
+Issue: Unable to go ahead, unable to find enough information
+
+7) On google search Uttar Pradesh voter list: http://164.100.180.4/searchengine/SearchEngineEnglish.aspx
+Can get Voter information if Epic no. and district is known.
+In converted html : Epic no is inteact with font = AAAAAF+Arial; font-size:10px and starting with ANB(555) or GLT(249) or UP(213)
+
+8) Method3: Parse epic no. data from converted pdf and scrap corresponding data from CEO website.
