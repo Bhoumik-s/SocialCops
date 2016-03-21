@@ -8,21 +8,32 @@ Convert pdf to html using pdf2txt
 Scrap data using beautiful soup
 Issue : Garbage data in html
 
-2) Copy a word and pasting it gives totally different word
-3) http://stackoverflow.com/questions/30756193/unable-to-copy-exact-hindi-content-from-pdf : Some error in toUnicode map
+3) Copy a word and pasting it gives totally different word
+4) http://stackoverflow.com/questions/30756193/unable-to-copy-exact-hindi-content-from-pdf : Some error in toUnicode map
 
-4) http://www.glyphandcog.com/textext.html : pdf background
+5) http://www.glyphandcog.com/textext.html : pdf background
 Issue : Font is encodded subset, hence it is difficult to convert to text
 
-5) Methond2: OCR pdf using pypdfocr, go to method 1
+6) Methond2: OCR pdf using pypdfocr, go to method 1
 Issue: OCR did not recognize hindi font, gave it as it was.
 
-6) Method3: Extract Unicode map from pdf, correct it and extract the data.
+7) Method3: Extract Unicode map from pdf, correct it and extract the data.
 http://stackoverflow.com/questions/13668105/extact-tounicode-map-from-one-pdf-and-use-in-another
 Issue: Unable to go ahead, unable to find enough information
 
-7) On google search Uttar Pradesh voter list: http://164.100.180.4/searchengine/SearchEngineEnglish.aspx
+8) On google search Uttar Pradesh voter list: http://164.100.180.4/searchengine/SearchEngineEnglish.aspx
 Can get Voter information if Epic no. and district is known.
-In converted html : Epic no is inteact with font = AAAAAF+Arial; font-size:10px and starting with ANB(555) or GLT(249) or UP(213)
+In converted html : Epic no is intact with font = AAAAAF+Arial; font-size:10px and starting with ANB or GLT or UP
 
-8) Method3: Parse epic no. data from converted pdf and scrap corresponding data from CEO website.
+9) Method3: Parse epic no. data from converted pdf and scrap corresponding data from CEO website.
+As form is generated using javascript, using mechanize will be difficult.
+Curl can be used to make call on CEO server and get data.
+Script for curl can be found by preserving network log on chrome developer tools.
+Script has one variable EpicNO which is modified to get data corresponding to all EpicNo.
+
+Result: 
+Total EpicNo = 779
+time = 7min 44 sec
+Accuracy = 86%
+Reason for error = Data not available on CEO server
+

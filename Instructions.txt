@@ -1,0 +1,10 @@
+1) Create Virtual env:
+pip install virtualenv
+virtualenv venv
+source venv/bin/activate
+
+2) Install libraries
+pip install requirements.txt
+
+3) Run the program
+python main.py data.pdf

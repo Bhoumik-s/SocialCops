@@ -1,4 +1,8 @@
 beautifulsoup4==4.4.1
 bs4==0.0.1
+et-xmlfile==1.0.1
+jdcal==1.2
 lxml==3.5.0
+openpyxl==2.3.4
+pdfminer==20140328
 XlsxWriter==0.8.4
